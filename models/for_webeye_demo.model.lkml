@@ -12,6 +12,15 @@ persist_with: for_webeye_demo_default_datagroup
 
 # explore: 1_2_hop_isp {}
 
+# explore: pop_parameters {
+#   label: "PoP Method 3: Custom choice of current and previous periods with parameters"
+#   always_filter: {
+#     filters: [current_date_range: "6 months", compare_to: "Year" ]
+#   }
+# }
+
+explore: compare_week {}
+
 explore: borgmonfull {}
 
 explore: borgmonfull_bak {}
