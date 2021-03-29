@@ -32,14 +32,14 @@ view: pop_arbitrary {
     view_label: "_PoP"
     hidden: yes
     type: number
-    sql: DATEDIFF('day',  {% date_start first_period_filter %}, ${created_date}) ;;
+    sql: DATE_DIFF('day',  {% date_start first_period_filter %}, ${created_date}) ;;
   }
 
   dimension: days_from_start_second {
     view_label: "_PoP"
     hidden: yes
     type: number
-    sql: DATEDIFF('day',  {% date_start second_period_filter %}, ${created_date}) ;;
+    sql: DATE_DIFF('day',  {% date_start second_period_filter %}, ${created_date}) ;;
   }
 
 ## ------------------ DIMENSIONS TO PLOT ------------------ ##
@@ -80,14 +80,14 @@ view: pop_arbitrary {
     view_label: "_PoP"
     type: sum
     sql: ${amount};;
-    filters: [period_selected: "Second Period"]
+    filters: [period_selected: "First Period"]
   }
 
   measure: previous_period_sales {
     view_label: "_PoP"
     type: sum
     sql: ${amount};;
-    filters: [period_selected: "First Period"]
+    filters: [period_selected: "Second Period"]
   }
 
   measure: sales_pop_change {
